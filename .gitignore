@@ -2,6 +2,9 @@
 .gradle/
 build/
 
+# Files for the dex VM
+*.dex
+
 # Local configuration file (sdk path, etc)
 local.properties
 
@@ -13,6 +16,8 @@ captures/
 .externalNativeBuild/
 .cxx/
 *.apk
+*.ap_
+*.aab
 output.json
 
 # IntelliJ
@@ -21,6 +26,9 @@ output.json
 misc.xml
 deploymentTargetDropDown.xml
 render.experimental.xml
+
+# MacOS
+**/.DS_Store
 
 # Keystore files
 *.jks
