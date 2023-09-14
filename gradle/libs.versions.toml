@@ -36,6 +36,7 @@ hiltCompiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hilt
 hiltGradle = { module = "com.google.dagger:hilt-android-gradle-plugin", version.ref = "hilt" }
 
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
+retrofitGsonConverter = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit" }
 
 [plugins]
 com-android-application = { id = "com.android.application", version.ref = "agp" }

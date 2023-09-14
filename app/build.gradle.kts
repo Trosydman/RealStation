@@ -60,6 +60,7 @@ kapt {
 dependencies {
 
     implementation(libs.core.ktx)
+    implementation(libs.timber)
     implementation(libs.lifecycle.runtime.ktx)
     implementation(libs.activity.compose)
     implementation(platform(libs.compose.bom))
@@ -69,6 +70,7 @@ dependencies {
     implementation(libs.material3)
 
     implementation(libs.retrofit)
+    implementation(libs.retrofitGsonConverter)
 
     implementation(libs.hilt)
     kapt(libs.hiltCompiler)
