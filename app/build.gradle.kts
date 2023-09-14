@@ -2,6 +2,8 @@
 plugins {
     alias(libs.plugins.com.android.application)
     alias(libs.plugins.org.jetbrains.kotlin.android)
+    id("kotlin-kapt")
+    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -50,6 +52,11 @@ android {
     }
 }
 
+kapt {
+    correctErrorTypes = true
+    useBuildCache = true
+}
+
 dependencies {
 
     implementation(libs.core.ktx)
@@ -62,6 +69,9 @@ dependencies {
     implementation(libs.material3)
 
     implementation(libs.retrofit)
+
+    implementation(libs.hilt)
+    kapt(libs.hiltCompiler)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)
