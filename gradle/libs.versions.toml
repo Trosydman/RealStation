@@ -3,10 +3,12 @@ agp = "8.1.1"
 org-jetbrains-kotlin-android = "1.9.0"
 core-ktx = "1.12.0"
 timber = "5.0.1"
-junit = "4.13.2"
+kotest = "5.5.4"
 junitJupiter = "5.9.1"
+mockk = "1.13.3"
 androidx-test-ext-junit = "1.1.5"
 espresso-core = "3.5.1"
+coroutines = "1.6.4"
 lifecycle-runtime-ktx = "2.6.2"
 activity-compose = "1.7.2"
 compose-bom = "2023.09.00"
@@ -16,10 +18,14 @@ retrofit = "2.9.0"
 [libraries]
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
 timber = { module = "com.jakewharton.timber:timber", version.ref = "timber" }
-junit = { group = "junit", name = "junit", version.ref = "junit" }
+kotest = { module = "io.kotest:kotest-assertions-core", version.ref = "kotest" }
 junitJupiter = { module = "org.junit.jupiter:junit-jupiter-api", version.ref = "junitJupiter" }
+junitJupiterEngine = { module = "org.junit.jupiter:junit-jupiter-engine", version.ref = "junitJupiter" }
+junitJupiterParams = { module = "org.junit.jupiter:junit-jupiter-params", version.ref = "junitJupiter" }
+mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
 androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidx-test-ext-junit" }
 espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso-core" }
+coroutinesTest = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutines" }
 lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle-runtime-ktx" }
 activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activity-compose" }
 compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "compose-bom" }
@@ -36,10 +42,17 @@ hiltCompiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hilt
 hiltGradle = { module = "com.google.dagger:hilt-android-gradle-plugin", version.ref = "hilt" }
 
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
+retrofitGsonConverter = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit" }
 
 [plugins]
 com-android-application = { id = "com.android.application", version.ref = "agp" }
 org-jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "org-jetbrains-kotlin-android" }
 
 [bundles]
-
+testLibraries = [
+    "coroutinesTest",
+    "kotest",
+    "junitJupiter",
+    "junitJupiterParams",
+    "mockk",
+]

@@ -38,9 +38,20 @@ android {
     }
     kotlinOptions {
         jvmTarget = "1.8"
+        freeCompilerArgs = freeCompilerArgs + listOf(
+            "-opt-in=kotlinx.coroutines.ExperimentalCoroutinesApi",
+        )
+    }
+    @Suppress("UnstableApiUsage")
+    testOptions {
+        animationsDisabled = true
+        unitTests.all {
+            it.useJUnitPlatform()
+        }
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.2"
@@ -60,6 +71,7 @@ kapt {
 dependencies {
 
     implementation(libs.core.ktx)
+    implementation(libs.timber)
     implementation(libs.lifecycle.runtime.ktx)
     implementation(libs.activity.compose)
     implementation(platform(libs.compose.bom))
@@ -69,11 +81,14 @@ dependencies {
     implementation(libs.material3)
 
     implementation(libs.retrofit)
+    implementation(libs.retrofitGsonConverter)
 
     implementation(libs.hilt)
     kapt(libs.hiltCompiler)
 
-    testImplementation(libs.junit)
+    testImplementation(libs.bundles.testLibraries)
+    testRuntimeOnly(libs.junitJupiterEngine)
+
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.espresso.core)
     androidTestImplementation(platform(libs.compose.bom))
