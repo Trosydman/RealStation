@@ -38,6 +38,16 @@ android {
     }
     kotlinOptions {
         jvmTarget = "1.8"
+        freeCompilerArgs = freeCompilerArgs + listOf(
+            "-opt-in=kotlinx.coroutines.ExperimentalCoroutinesApi",
+        )
+    }
+    @Suppress("UnstableApiUsage")
+    testOptions {
+        animationsDisabled = true
+        unitTests.all {
+            it.useJUnitPlatform()
+        }
     }
     buildFeatures {
         compose = true
@@ -76,7 +86,9 @@ dependencies {
     implementation(libs.hilt)
     kapt(libs.hiltCompiler)
 
-    testImplementation(libs.junit)
+    testImplementation(libs.bundles.testLibraries)
+    testRuntimeOnly(libs.junitJupiterEngine)
+
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.espresso.core)
     androidTestImplementation(platform(libs.compose.bom))
