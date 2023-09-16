@@ -10,8 +10,10 @@ androidx-test-ext-junit = "1.1.5"
 espresso-core = "3.5.1"
 coroutines = "1.6.4"
 lifecycle-runtime-ktx = "2.6.2"
-activity-compose = "1.7.2"
+androidx-appcompat = "1.6.1"
 compose-bom = "2023.09.00"
+compose-activity = "1.7.2"
+coil = "2.4.0"
 hilt = "2.46.1"
 retrofit = "2.9.0"
 
@@ -27,8 +29,10 @@ androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit", version
 espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso-core" }
 coroutinesTest = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutines" }
 lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle-runtime-ktx" }
-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activity-compose" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "androidx-appcompat" }
 compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "compose-bom" }
+compose-activity = { group = "androidx.activity", name = "activity-compose", version.ref = "compose-activity" }
+coilCompose = { module = "io.coil-kt:coil-compose", version.ref = "coil" }
 ui = { group = "androidx.compose.ui", name = "ui" }
 ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
 ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
@@ -55,4 +59,8 @@ testLibraries = [
     "junitJupiter",
     "junitJupiterParams",
     "mockk",
+]
+compose = [
+    "compose-activity",
+    "coilCompose",
 ]
