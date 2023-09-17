@@ -1,5 +1,6 @@
 package com.cmesquita.realstation.ui.list.navigation
 
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 import com.cmesquita.realstation.ui.list.RealStateListScreen
@@ -10,6 +11,9 @@ fun NavGraphBuilder.realStateListScreen(
     navigateToDetails: (String) -> Unit,
 ) {
     composable(route = realStateListRoute) {
-        RealStateListScreen(navigateToDetails = navigateToDetails)
+        RealStateListScreen(
+            viewModel = hiltViewModel(),
+            navigateToDetails = navigateToDetails
+        )
     }
 }
