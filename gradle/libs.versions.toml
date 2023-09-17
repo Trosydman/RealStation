@@ -13,6 +13,8 @@ lifecycle-runtime-ktx = "2.6.2"
 androidx-appcompat = "1.6.1"
 compose-bom = "2023.09.00"
 compose-activity = "1.7.2"
+composeNavigation = "2.7.2"
+composeHiltNavigation = "1.0.0"
 coil = "2.4.0"
 hilt = "2.46.1"
 retrofit = "2.9.0"
@@ -32,6 +34,8 @@ lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtim
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "androidx-appcompat" }
 compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "compose-bom" }
 compose-activity = { group = "androidx.activity", name = "activity-compose", version.ref = "compose-activity" }
+composeNavigation = { module = "androidx.navigation:navigation-compose", version.ref = "composeNavigation" }
+composeHiltNavigation = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "composeHiltNavigation" }
 coilCompose = { module = "io.coil-kt:coil-compose", version.ref = "coil" }
 ui = { group = "androidx.compose.ui", name = "ui" }
 ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
@@ -63,4 +67,6 @@ testLibraries = [
 compose = [
     "compose-activity",
     "coilCompose",
+    "composeNavigation",
+    "composeHiltNavigation",
 ]
