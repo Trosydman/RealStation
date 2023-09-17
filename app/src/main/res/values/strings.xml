@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">RealStation</string>
+    <string name="measurement.square_meter">%d m\u00B2</string>
+    <string name="list.message.generic_error">Ups! An unexpected error happened…\nTry again later</string>
+    <string name="list.message.empty_result">"Ups! There is nothing to see here…"</string>
     <string name="details.a11y.location">Location</string>
     <string name="details.label.professional">by %s</string>
     <string name="details.title.area">Area</string>
