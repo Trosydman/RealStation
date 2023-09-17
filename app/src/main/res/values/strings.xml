@@ -4,6 +4,10 @@
     <string name="details.label.professional">by %s</string>
     <string name="details.title.area">Area</string>
     <string name="details.title.property_type">Type</string>
+    <plurals name="details.label.rooms">
+        <item quantity="one">"%d room"</item>
+        <item quantity="other">"%d rooms"</item>
+    </plurals>
     <string name="details.title.bedrooms">Bedrooms</string>
     <string name="details.title.total_rooms">Total rooms</string>
 </resources>
