@@ -16,7 +16,9 @@ import com.cmesquita.realstation.ui.theme.RealStationTheme
 import kotlin.random.Random
 
 @Composable
-fun RealStateListScreen() {
+fun RealStateListScreen(
+    navigateToDetails: (String) -> Unit,
+) {
     RealStateListContent(state = RealStateListUIState.Info("This app still under constructions"))
 }
 
