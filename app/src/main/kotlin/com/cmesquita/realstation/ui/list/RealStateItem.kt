@@ -32,7 +32,7 @@ import com.cmesquita.realstation.ui.list.model.RealStateListItem
 import com.cmesquita.realstation.ui.theme.RealStationTheme
 import kotlin.random.Random
 
-const val ASPECT_RATIO_IMAGE = 90f / 47f
+private const val ASPECT_RATIO_IMAGE = 90f / 47f
 
 @Composable
 fun RealStateItem(

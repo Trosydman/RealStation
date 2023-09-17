@@ -23,7 +23,7 @@ import com.cmesquita.realstation.ui.theme.RealStationTheme
 
 @Composable
 internal fun RealStateImage(
-    imageURL: String,
+    imageURL: String?,
     modifier: Modifier = Modifier,
 ) {
     val asyncImagePainter = rememberAsyncImagePainter(

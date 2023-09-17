@@ -40,6 +40,7 @@ android {
         jvmTarget = "1.8"
         freeCompilerArgs = freeCompilerArgs + listOf(
             "-opt-in=kotlinx.coroutines.ExperimentalCoroutinesApi",
+            "-opt-in=androidx.compose.foundation.layout.ExperimentalLayoutApi",
             "-opt-in=androidx.compose.material3.ExperimentalMaterial3Api",
         )
     }
