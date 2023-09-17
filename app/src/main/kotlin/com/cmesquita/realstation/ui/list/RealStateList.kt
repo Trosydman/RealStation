@@ -10,6 +10,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.cmesquita.realstation.ui.list.model.RealStateListItem
 import com.cmesquita.realstation.ui.theme.RealStationTheme
+import java.math.BigDecimal
 import kotlin.random.Random
 
 @Composable
@@ -46,9 +47,9 @@ private fun RealStateListPreview() = RealStationTheme {
             RealStateListItem(
                 id = it.toString(),
                 photoURL = "url.com",
-                price = "${Random.nextInt(100, 999)}.000 €",
+                price = BigDecimal(Random.nextInt(100, 999) * 1000000),
                 location = "Berlin",
-                area = "${Random.nextInt(1, 100)} m2",
+                area = Random.nextInt(1, 100),
             )
         },
         onRealStateClick = {},

@@ -14,3 +14,11 @@ sealed class RealStateListUIState {
 
     data class Content(val realStates: List<RealStateListItem>) : RealStateListUIState()
 }
+
+sealed class RealStateListAction {
+    data object Launch : RealStateListAction()
+}
+
+sealed class RealStateListEvent {
+    data class NavigateToDetails(val id: String) : RealStateListEvent()
+}

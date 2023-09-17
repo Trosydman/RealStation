@@ -3,6 +3,7 @@ package com.cmesquita.realstation.dummy
 import com.cmesquita.realstation.data.remote.model.RealStateDTO
 import com.cmesquita.realstation.data.remote.model.RealStateListDTO
 import com.cmesquita.realstation.domain.model.RealState
+import com.cmesquita.realstation.ui.list.model.RealStateListItem
 
 fun dummyRealStateDTO(id: Long) = RealStateDTO(
     bedrooms = 1,
@@ -28,6 +29,14 @@ fun dummyRealState(id: Long) = RealState(
     propertyType = "Flat",
     offerType = 2,
     professional = "Professional",
+)
+
+fun dummyRealStateListItem(id: Long) = RealStateListItem(
+    id = id.toString(),
+    photoURL = "https://aviv.pics.com/$id",
+    price = 500000.0f.toBigDecimal(),
+    location = "Berlin",
+    area = 50,
 )
 
 fun dummyRealStateListDTO(count: Int) = RealStateListDTO(
