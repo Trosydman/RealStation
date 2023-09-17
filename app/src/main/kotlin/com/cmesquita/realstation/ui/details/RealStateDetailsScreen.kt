@@ -15,6 +15,7 @@ import com.cmesquita.realstation.ui.components.CircularLoadingFullScreen
 import com.cmesquita.realstation.ui.components.InfoMessageFullScreen
 import com.cmesquita.realstation.ui.details.model.RealStateDetails
 import com.cmesquita.realstation.ui.theme.RealStationTheme
+import java.math.BigDecimal
 import kotlin.random.Random
 
 @Composable
@@ -83,8 +84,8 @@ private fun RealStateDetailsContentPreview() = RealStationTheme {
         state = RealStateDetailsUIState.Content(
             realState = RealStateDetails(
                 photoURL = "https://picsum.photos/590/330",
-                price = "${Random.nextInt(100, 999)}.000.000 €",
-                area = "${Random.nextInt(1, 100)} m2",
+                price = BigDecimal(Random.nextInt(100, 999) * 1000000),
+                area = Random.nextInt(1, 100),
                 location = "Berlin",
                 totalRooms = 4,
                 bedrooms = 1,
