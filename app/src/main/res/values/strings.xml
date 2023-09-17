@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">RealStation</string>
+    <string name="details.a11y.location">Location</string>
+    <string name="details.label.professional">by %s</string>
+    <string name="details.title.area">Area</string>
+    <string name="details.title.property_type">Type</string>
+    <string name="details.title.bedrooms">Bedrooms</string>
+    <string name="details.title.total_rooms">Total rooms</string>
 </resources>
