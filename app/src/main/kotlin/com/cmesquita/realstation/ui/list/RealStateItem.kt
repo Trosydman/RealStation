@@ -23,13 +23,17 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.cmesquita.realstation.R
+import com.cmesquita.realstation.extensions.formatCurrency
 import com.cmesquita.realstation.ui.components.RealStateImage
 import com.cmesquita.realstation.ui.list.model.RealStateListItem
 import com.cmesquita.realstation.ui.theme.RealStationTheme
+import java.math.BigDecimal
 import kotlin.random.Random
 
 private const val ASPECT_RATIO_IMAGE = 90f / 47f
@@ -57,9 +61,9 @@ fun RealStateItem(
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(16.dp),
-                price = realState.price,
+                price = realState.price.formatCurrency(),
                 location = realState.location,
-                area = realState.area,
+                area = stringResource(id = R.string.measurement_square_meter, realState.area),
             )
         }
     }
@@ -143,9 +147,9 @@ private fun RealStateItemPreview() = RealStationTheme {
         realState = RealStateListItem(
             id = "1",
             photoURL = "https://picsum.photos/id/58/1280/853",
-            price = "${Random.nextInt(100, 999)}.000.000 €",
+            price = BigDecimal(Random.nextInt(100, 999) * 1000000),
             location = "Berlin",
-            area = "${Random.nextInt(1, 100)} m2",
+            area = Random.nextInt(1, 100),
         ),
         onItemClick = {}
     )
