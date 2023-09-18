@@ -52,7 +52,7 @@ This repository is then injected in both of the ViewModels to gather the necessa
 ## Conclusion 
 
 ### Resources
-Find attach to the project folder a [debug APK](RealStation_1.0(1)-debug.apk). Alternatively you can build the project using Android Studio.
+Find attach to the project folder a [debug APK](readme_data/RealStation_1.0(1)-debug.apk). Alternatively you can build the project using Android Studio.
 
 In addition, a few screenshots and a demo video can be found also in the project folder: 
 - [RealStation_Demo](readme_data/RealStation_Demo.mp4)
