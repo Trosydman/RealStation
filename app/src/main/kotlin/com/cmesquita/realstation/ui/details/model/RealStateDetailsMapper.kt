@@ -12,8 +12,8 @@ class RealStateDetailsMapper : UIMapper<RealState, RealStateDetails> {
                 price = price,
                 area = area.roundToInt(),
                 location = city,
-                totalRooms = totalRooms,
-                bedrooms = bedrooms,
+                totalRooms = if (totalRooms > 0) totalRooms else null,
+                bedrooms = if (bedrooms > 0) bedrooms else null,
                 propertyType = propertyType,
                 professional = professional,
             )

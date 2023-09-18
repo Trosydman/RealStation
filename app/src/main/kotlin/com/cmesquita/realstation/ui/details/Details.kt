@@ -106,26 +106,31 @@ fun Body(
             title = stringResource(id = R.string.details_title_property_type),
             text = realState.propertyType,
         )
-        RealStateFeature(
-            modifier = realStateFeatureModifier,
-            icon = Icons.Default.AccountBox,
-            title = stringResource(id = R.string.details_title_bedrooms),
-            text = pluralStringResource(
-                id = R.plurals.details_label_rooms,
-                count = realState.bedrooms,
-                realState.bedrooms,
-            ),
-        )
-        RealStateFeature(
-            modifier = realStateFeatureModifier,
-            icon = Icons.Default.List,
-            title = stringResource(id = R.string.details_title_total_rooms),
-            text = pluralStringResource(
-                id = R.plurals.details_label_rooms,
-                count = realState.totalRooms,
-                realState.totalRooms,
-            ),
-        )
+
+        if (realState.bedrooms != null) {
+            RealStateFeature(
+                modifier = realStateFeatureModifier,
+                icon = Icons.Default.AccountBox,
+                title = stringResource(id = R.string.details_title_bedrooms),
+                text = pluralStringResource(
+                    id = R.plurals.details_label_rooms,
+                    count = realState.bedrooms,
+                    realState.bedrooms,
+                ),
+            )
+        }
+        if (realState.totalRooms != null) {
+            RealStateFeature(
+                modifier = realStateFeatureModifier,
+                icon = Icons.Default.List,
+                title = stringResource(id = R.string.details_title_total_rooms),
+                text = pluralStringResource(
+                    id = R.plurals.details_label_rooms,
+                    count = realState.totalRooms,
+                    realState.totalRooms,
+                ),
+            )
+        }
     }
 }
 

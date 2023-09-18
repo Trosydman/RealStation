@@ -7,8 +7,8 @@ data class RealStateDetails(
     val price: BigDecimal,
     val area: Int,
     val location: String,
-    val totalRooms: Int,
-    val bedrooms: Int,
+    val totalRooms: Int?,
+    val bedrooms: Int?,
     val propertyType: String,
     val professional: String,
 )

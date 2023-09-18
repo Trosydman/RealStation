@@ -46,8 +46,8 @@ class RealStateDetailsMapperTest {
                     price = 1500000.0f.toBigDecimal(),
                     area = 250.8f,
                     city = "Berlin",
-                    totalRooms = 8,
-                    bedrooms = 4,
+                    totalRooms = 0,
+                    bedrooms = 0,
                     propertyType = "Villa",
                     offerType = 1,
                     professional = "Professional",
@@ -57,12 +57,12 @@ class RealStateDetailsMapperTest {
                     price = 1500000.0f.toBigDecimal(),
                     area = 251,
                     location = "Berlin",
-                    totalRooms = 8,
-                    bedrooms = 4,
+                    totalRooms = null,
+                    bedrooms = null,
                     propertyType = "Villa",
                     professional = "Professional",
                 ),
-            )
+            ),
         )
     }
 
