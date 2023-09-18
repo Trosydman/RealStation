@@ -10,3 +10,7 @@ sealed class RealStateDetailsUIState {
 
     data class Content(val realState: RealStateDetails) : RealStateDetailsUIState()
 }
+
+sealed class RealStateDetailsAction {
+    data class Launch(val id: String) : RealStateDetailsAction()
+}
