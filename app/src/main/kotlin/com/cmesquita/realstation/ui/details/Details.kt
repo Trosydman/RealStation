@@ -24,8 +24,10 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.cmesquita.realstation.R
+import com.cmesquita.realstation.extensions.formatCurrency
 import com.cmesquita.realstation.ui.details.model.RealStateDetails
 import com.cmesquita.realstation.ui.theme.RealStationTheme
+import java.math.BigDecimal
 import kotlin.random.Random
 
 @Composable
@@ -36,7 +38,7 @@ internal fun Details(
     Column(modifier = modifier) {
 
         Title(
-            price = realState.price,
+            price = realState.price.formatCurrency(),
             professional = realState.professional,
         )
 
@@ -96,7 +98,7 @@ fun Body(
             modifier = realStateFeatureModifier,
             icon = Icons.Default.ExitToApp,
             title = stringResource(id = R.string.details_title_area),
-            text = realState.area,
+            text = stringResource(id = R.string.measurement_square_meter, realState.area),
         )
         RealStateFeature(
             modifier = realStateFeatureModifier,
@@ -136,8 +138,8 @@ private fun DetailsPreview() = RealStationTheme {
             .padding(16.dp),
         realState = RealStateDetails(
             photoURL = "https://picsum.photos/590/330",
-            price = "${Random.nextInt(100, 999)}.000.000 €",
-            area = "${Random.nextInt(1, 100)} m2",
+            price = BigDecimal(Random.nextInt(100, 999) * 1000000),
+            area = Random.nextInt(1, 100),
             location = "Berlin",
             totalRooms = 4,
             bedrooms = 1,
