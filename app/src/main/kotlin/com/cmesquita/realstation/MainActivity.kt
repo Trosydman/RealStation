@@ -51,7 +51,9 @@ class MainActivity : ComponentActivity() {
                                 navController.navigateToRealStateDetails(id)
                             }
                         )
-                        realStateDetailsScreen()
+                        realStateDetailsScreen(
+                            onBackClick = { navController.popBackStack() }
+                        )
                     }
                 }
             }

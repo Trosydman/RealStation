@@ -1,13 +1,20 @@
 package com.cmesquita.realstation.ui.details
 
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.Warning
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
+import androidx.compose.material3.IconButtonDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -19,34 +26,60 @@ import java.math.BigDecimal
 import kotlin.random.Random
 
 @Composable
-fun RealStateDetailsScreen() {
+fun RealStateDetailsScreen(
+    viewModel: RealStateDetailsViewModel,
+    realStateId: String,
+    onBackClick: () -> Unit,
+) {
+    val state = viewModel.state.collectAsState()
+
+    LaunchedEffect(realStateId) {
+        viewModel.handle(RealStateDetailsAction.Launch(realStateId))
+    }
+
     RealStateDetailsContent(
+        modifier = Modifier.fillMaxSize(),
         contentPadding = PaddingValues(
             vertical = 16.dp,
             horizontal = 24.dp,
         ),
-        state = RealStateDetailsUIState.Error("This app still under constructions"),
+        state = state.value,
+        onBackClick = onBackClick,
     )
 }
 
 @Composable
 fun RealStateDetailsContent(
     state: RealStateDetailsUIState,
+    onBackClick: () -> Unit,
     modifier: Modifier = Modifier,
     contentPadding: PaddingValues = PaddingValues(),
 ) {
-    when (state) {
-        is RealStateDetailsUIState.Loading -> CircularLoadingFullScreen()
-        is RealStateDetailsUIState.Error -> InfoMessageFullScreen(
-            icon = Icons.Default.Warning,
-            text = state.message,
-        )
+    Box(modifier = modifier) {
+        when (state) {
+            is RealStateDetailsUIState.Loading -> CircularLoadingFullScreen()
+            is RealStateDetailsUIState.Error -> InfoMessageFullScreen(
+                icon = Icons.Default.Warning,
+                text = state.message,
+            )
 
-        is RealStateDetailsUIState.Content -> RealStateDetails(
-            modifier = modifier,
-            realState = state.realState,
-            contentPadding = contentPadding,
-        )
+            is RealStateDetailsUIState.Content -> RealStateDetails(
+                modifier = Modifier.fillMaxSize(),
+                realState = state.realState,
+                contentPadding = contentPadding,
+            )
+        }
+
+        IconButton(
+            modifier = Modifier.padding(16.dp),
+            colors = IconButtonDefaults.filledIconButtonColors(),
+            onClick = onBackClick,
+        ) {
+            Icon(
+                imageVector = Icons.Default.ArrowBack,
+                contentDescription = "Navigate back",
+            )
+        }
     }
 }
 
@@ -92,7 +125,8 @@ private fun RealStateDetailsContentPreview() = RealStationTheme {
                 propertyType = "Flat",
                 professional = "Real State Agent",
             )
-        )
+        ),
+        onBackClick = {},
     )
 }
 
@@ -107,7 +141,8 @@ private fun RealStateDetailsContentErrorPreview() = RealStationTheme {
         ),
         state = RealStateDetailsUIState.Error(
             message = "Ups! An unexpected error happened...\nTry again later"
-        )
+        ),
+        onBackClick = {},
     )
 }
 
@@ -120,6 +155,7 @@ private fun RealStateDetailsContentLoadingPreview() = RealStationTheme {
             vertical = 16.dp,
             horizontal = 24.dp,
         ),
-        state = RealStateDetailsUIState.Loading
+        state = RealStateDetailsUIState.Loading,
+        onBackClick = {},
     )
 }
