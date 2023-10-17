@@ -5,18 +5,15 @@ import com.cmesquita.realstation.ui.list.model.RealStateListItemMapper
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.components.SingletonComponent
-import javax.inject.Singleton
+import dagger.hilt.android.components.ViewModelComponent
 
 @Module
-@InstallIn(SingletonComponent::class)
+@InstallIn(ViewModelComponent::class)
 object UIModule {
 
-    @Singleton
     @Provides
     fun provideRealStateListItemMapper(): RealStateListItemMapper = RealStateListItemMapper()
 
-    @Singleton
     @Provides
     fun provideRealStateDetailsMapper(): RealStateDetailsMapper = RealStateDetailsMapper()
 }
