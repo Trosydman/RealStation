@@ -3,8 +3,8 @@ package com.cmesquita.realstation.ui.list
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.cmesquita.realstation.BuildConfig
-import com.cmesquita.realstation.data.RealStateRepository
 import com.cmesquita.realstation.data.model.Result
+import com.cmesquita.realstation.domain.RealStateRepository
 import com.cmesquita.realstation.ui.list.model.RealStateListItemMapper
 import com.cmesquita.realstation.utils.coroutines.AppCoroutineDispatchers
 import dagger.hilt.android.lifecycle.HiltViewModel
