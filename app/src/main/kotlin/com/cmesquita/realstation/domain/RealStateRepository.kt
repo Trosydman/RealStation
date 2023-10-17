@@ -1,4 +1,4 @@
-package com.cmesquita.realstation.data
+package com.cmesquita.realstation.domain
 
 import com.cmesquita.realstation.data.model.Result
 import com.cmesquita.realstation.domain.model.RealState

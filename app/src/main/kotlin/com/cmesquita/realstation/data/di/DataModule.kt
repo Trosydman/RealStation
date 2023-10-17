@@ -1,12 +1,12 @@
 package com.cmesquita.realstation.data.di
 
 import android.content.Context
-import com.cmesquita.realstation.data.RealStateRepository
 import com.cmesquita.realstation.data.RealStateRepositoryImpl
 import com.cmesquita.realstation.data.remote.AvivAPI
 import com.cmesquita.realstation.data.remote.NetworkConnectionInterceptor
 import com.cmesquita.realstation.data.remote.model.RealStateDTOMapper
 import com.cmesquita.realstation.data.remote.model.RealStateListDTOMapper
+import com.cmesquita.realstation.domain.RealStateRepository
 import dagger.Binds
 import dagger.Module
 import dagger.Provides

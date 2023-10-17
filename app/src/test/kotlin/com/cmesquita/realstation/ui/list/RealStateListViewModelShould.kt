@@ -1,7 +1,7 @@
 package com.cmesquita.realstation.ui.list
 
-import com.cmesquita.realstation.data.RealStateRepository
 import com.cmesquita.realstation.data.model.Result
+import com.cmesquita.realstation.domain.RealStateRepository
 import com.cmesquita.realstation.domain.model.RealState
 import com.cmesquita.realstation.dummy.dummyRealState
 import com.cmesquita.realstation.dummy.dummyRealStateListItem

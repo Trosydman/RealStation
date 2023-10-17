@@ -5,6 +5,7 @@ import com.cmesquita.realstation.data.remote.AvivAPI
 import com.cmesquita.realstation.data.remote.NoConnectivityException
 import com.cmesquita.realstation.data.remote.model.RealStateDTOMapper
 import com.cmesquita.realstation.data.remote.model.RealStateListDTOMapper
+import com.cmesquita.realstation.domain.RealStateRepository
 import com.cmesquita.realstation.domain.model.RealState
 import retrofit2.Response
 import javax.inject.Inject
