@@ -18,7 +18,7 @@ composeNavigation = "2.7.2"
 composeHiltNavigation = "1.0.0"
 coil = "2.4.0"
 hilt = "2.57.2"
-retrofit = "2.9.0"
+retrofit = "3.0.0"
 
 [libraries]
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
