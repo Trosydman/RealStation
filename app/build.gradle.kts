@@ -3,7 +3,7 @@ plugins {
     alias(libs.plugins.com.android.application)
     alias(libs.plugins.android.kotlin)
     alias(libs.plugins.kotlin.composeCompiler)
-    id("kotlin-kapt")
+    alias(libs.plugins.ksp)
     alias(libs.plugins.hilt)
 }
 
@@ -65,11 +65,6 @@ android {
     }
 }
 
-kapt {
-    correctErrorTypes = true
-    useBuildCache = true
-}
-
 dependencies {
 
     implementation(libs.core.ktx)
@@ -86,7 +81,7 @@ dependencies {
     implementation(libs.retrofitGsonConverter)
 
     implementation(libs.hilt)
-    kapt(libs.hiltCompiler)
+    ksp(libs.hiltCompiler)
 
     testImplementation(libs.bundles.testLibraries)
     testRuntimeOnly(libs.junitJupiterEngine)
