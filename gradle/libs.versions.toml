@@ -1,6 +1,6 @@
 [versions]
-agp = "8.1.1"
-org-jetbrains-kotlin-android = "1.9.0"
+agp = "8.13.1"
+kotlin = "2.2.21"
 core-ktx = "1.12.0"
 timber = "5.0.1"
 kotest = "5.5.4"
@@ -17,7 +17,7 @@ compose-activity = "1.7.2"
 composeNavigation = "2.7.2"
 composeHiltNavigation = "1.0.0"
 coil = "2.4.0"
-hilt = "2.46.1"
+hilt = "2.57.2"
 retrofit = "2.9.0"
 
 [libraries]
@@ -56,7 +56,9 @@ retrofitGsonConverter = { module = "com.squareup.retrofit2:converter-gson", vers
 
 [plugins]
 com-android-application = { id = "com.android.application", version.ref = "agp" }
-org-jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "org-jetbrains-kotlin-android" }
+android-kotlin = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-composeCompiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" } # This version matches your Kotlin version
+hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 
 [bundles]
 testLibraries = [

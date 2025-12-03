@@ -1,9 +1,10 @@
 @Suppress("DSL_SCOPE_VIOLATION")
 plugins {
     alias(libs.plugins.com.android.application)
-    alias(libs.plugins.org.jetbrains.kotlin.android)
+    alias(libs.plugins.android.kotlin)
+    alias(libs.plugins.kotlin.composeCompiler)
     id("kotlin-kapt")
-    id("com.google.dagger.hilt.android")
+    alias(libs.plugins.hilt)
 }
 
 android {
@@ -36,13 +37,15 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
-    kotlinOptions {
-        jvmTarget = "1.8"
-        freeCompilerArgs = freeCompilerArgs + listOf(
-            "-opt-in=kotlinx.coroutines.ExperimentalCoroutinesApi",
-            "-opt-in=androidx.compose.foundation.layout.ExperimentalLayoutApi",
-            "-opt-in=androidx.compose.material3.ExperimentalMaterial3Api",
-        )
+    kotlin {
+        compilerOptions {
+            jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_1_8)
+            freeCompilerArgs.addAll(
+                "-opt-in=kotlinx.coroutines.ExperimentalCoroutinesApi",
+                "-opt-in=androidx.compose.foundation.layout.ExperimentalLayoutApi",
+                "-opt-in=androidx.compose.material3.ExperimentalMaterial3Api"
+            )
+        }
     }
     @Suppress("UnstableApiUsage")
     testOptions {
