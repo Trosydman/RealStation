@@ -1,8 +1,8 @@
 @Suppress("DSL_SCOPE_VIOLATION")
 plugins {
     alias(libs.plugins.com.android.application)
-    alias(libs.plugins.kotlin)
-    alias(libs.plugins.compose.compiler)
+    alias(libs.plugins.android.kotlin)
+    alias(libs.plugins.kotlin.composeCompiler)
     id("kotlin-kapt")
     alias(libs.plugins.hilt)
 }
