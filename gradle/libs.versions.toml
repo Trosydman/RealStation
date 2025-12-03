@@ -13,7 +13,6 @@ androidx-test-ext-junit = "1.1.5"
 espresso-core = "3.5.1"
 coroutines = "1.7.1"
 lifecycle-runtime-ktx = "2.6.2"
-androidx-appcompat = "1.6.1"
 material3 = "1.13.0"
 compose-bom = "2025.11.01"
 compose-activity = "1.12.0"
@@ -35,7 +34,6 @@ androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit", version
 espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso-core" }
 coroutinesTest = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutines" }
 lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle-runtime-ktx" }
-androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "androidx-appcompat" }
 compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "compose-bom" }
 compose-activity = { group = "androidx.activity", name = "activity-compose", version.ref = "compose-activity" }
 composeNavigation = { module = "androidx.navigation:navigation-compose", version.ref = "composeNavigation" }
