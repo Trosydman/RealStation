@@ -17,7 +17,7 @@ compose-activity = "1.7.2"
 composeNavigation = "2.7.2"
 composeHiltNavigation = "1.0.0"
 coil = "2.4.0"
-hilt = "2.46.1"
+hilt = "2.57.2"
 retrofit = "2.9.0"
 
 [libraries]
@@ -57,6 +57,7 @@ retrofitGsonConverter = { module = "com.squareup.retrofit2:converter-gson", vers
 [plugins]
 com-android-application = { id = "com.android.application", version.ref = "agp" }
 org-jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "org-jetbrains-kotlin-android" }
+hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 
 [bundles]
 testLibraries = [
